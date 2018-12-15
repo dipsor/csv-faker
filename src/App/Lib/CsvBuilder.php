@@ -1,5 +1,5 @@
 <?php
-namespace App\Lib;
+namespace Dipsor\CsvFaker\Lib;
 
 use Faker\Generator as Faker;
 use League\Csv\Writer;
