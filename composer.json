@@ -1,0 +1,32 @@
+{
+  "name": "dipsor/csv-faker",
+  "description": "Creates fake csv files with dummy data.",
+  "keywords": ["csv", "faker"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Miroslav Masek",
+      "email": "masek.mira@gmail.com"
+    }
+  ],
+  "autoload": {
+    "classmap" : [
+      "tests"
+    ],
+    "psr-4": {
+      "Dipsor\\CsvFaker\\": "src"
+    }
+  },
+  "require": {
+    "league/csv": "^9.1",
+    "fzaninotto/faker": "^1.4"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dipsor\\CsvFaker\\CsvFakerServiceProvider"
+      ]
+    }
+  }
+}
