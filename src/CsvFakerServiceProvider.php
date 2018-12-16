@@ -2,6 +2,7 @@
 namespace Dipsor\CsvFaker;
 
 use Dipsor\CsvFaker\Lib\CsvBuilder;
+use Faker\Factory;
 use Faker\Generator as Faker;
 use Dipsor\CsvFaker\Console\Commands\FakeCsvCommand;
 use Illuminate\Support\ServiceProvider;
@@ -36,7 +37,7 @@ class CsvFakerServiceProvider  extends ServiceProvider
     }
     public function registerCommands(){
         $this->app->singleton('csv:faker:new', function($app) {
-            return new FakeCsvCommand(new CsvBuilder(new Faker()));
+            return new FakeCsvCommand(new CsvBuilder(Factory::create()));
         });
         $this->commands('csv:faker:new');
     }
