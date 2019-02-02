@@ -1,0 +1,9 @@
+language: php
+install:
+    composer install
+php:
+  - 7.2
+
+script:
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit -c phpunit.xml
