@@ -1,5 +1,8 @@
 # DIPSOR/CSV-FAKER #
 [![Build Status](https://travis-ci.org/dipsor/csv-faker.svg?branch=master)](https://travis-ci.org/dipsor/csv-faker)
+[![codecov](https://codecov.io/gh/dipsor/csv-faker/branch/master/graph/badge.svg)](https://codecov.io/gh/dipsor/csv-faker)
+
+
 Creates commands for laravel.
 ### csv:faker:new // uses default option --load=a ###
     - User has to interact in the console.
