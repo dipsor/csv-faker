@@ -16,9 +16,9 @@ class CsvFakerServiceProvider  extends ServiceProvider
      */
     public function boot()
     {
-//        $this->publishes([
-//            __DIR__ . '/config/config.php' => config_path('laravel-ab.php'),
-//        ], 'config');
+        $this->publishes([
+            __DIR__ . '/config/filesystem.php' => config_path('csv-faker.php'),
+        ], 'config');
     }
     /**
      * Register the service provider.
@@ -27,9 +27,9 @@ class CsvFakerServiceProvider  extends ServiceProvider
      */
     public function register()
     {
-//        $this->mergeConfigFrom(
-//            __DIR__.'/config/config.php', 'laravel-ab'
-//        );
+        $this->mergeConfigFrom(
+            __DIR__.'/config/filesystem.php', 'csv-faker'
+        );
 //        $this->app->make('Illuminate\Contracts\Http\Kernel')->prependMiddleware('\Digitonic\LaravelAb\App\Http\Middleware\LaravelAbMiddleware');
 //        $this->app->bind('Ab', 'Digitonic\LaravelAb\App\Ab');
 //        $this->registerCompiler();
