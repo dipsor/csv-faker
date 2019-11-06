@@ -16,9 +16,6 @@ class CsvFakerServiceProvider  extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/filesystem.php' => config_path('csv-faker.php'),
-        ], 'config');
     }
     /**
      * Register the service provider.
@@ -27,12 +24,6 @@ class CsvFakerServiceProvider  extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/config/filesystem.php', 'csv-faker'
-        );
-//        $this->app->make('Illuminate\Contracts\Http\Kernel')->prependMiddleware('\Digitonic\LaravelAb\App\Http\Middleware\LaravelAbMiddleware');
-//        $this->app->bind('Ab', 'Digitonic\LaravelAb\App\Ab');
-//        $this->registerCompiler();
         $this->registerCommands();
     }
     public function registerCommands(){
@@ -51,5 +42,17 @@ class CsvFakerServiceProvider  extends ServiceProvider
         return [
             'csv:faker:new'
         ];
+    }
+
+    /**
+     * Register helpers file
+     */
+    public function registerHelpers()
+    {
+        // Load the helpers in app/Http/helpers.php
+        if (file_exists($file = app_path('Http/helpers.php')))
+        {
+            require $file;
+        }
     }
 }
