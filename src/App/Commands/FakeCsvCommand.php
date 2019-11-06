@@ -241,8 +241,8 @@ class FakeCsvCommand extends Command
     {
         $writer = $this->csvBuilder->buildFromArray($this->inputs, $this->rows, $this->fileName);
 
-        Storage::disk('generated-csv')->put($this->fileName . '.csv', $writer->getContent());
+        Storage::put('csv/'.$this->fileName . '.csv', $writer->getContent());
 
-        $this->info('New file was created: ' . storage_path('generated-csv') . '/' . $this->fileName);
+        $this->info('New file was created: ' . storage_path('csv') . '/' . $this->fileName . 'csv');
     }
 }

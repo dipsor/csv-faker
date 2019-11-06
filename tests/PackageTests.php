@@ -13,6 +13,6 @@ class PackageTests extends TestCase
 {
     public function test_tests_work()
     {
-        $this->assertTrue(true);
+
     }
 }
